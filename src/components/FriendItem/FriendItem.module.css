@@ -1,0 +1,29 @@
+.item {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  background-color: var(--white);
+  border-radius: 5px;
+  column-gap: 10px;
+}
+
+.name {
+  margin: 0;
+  font-size: 18px;
+}
+
+.status {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.online {
+  composes: status;
+  background-color: green;
+}
+
+.offline {
+  composes: status;
+  background-color: red;
+}
