@@ -1,18 +1,32 @@
-import React, { Component } from 'react';
+import css from './Statistics.module.css';
 
-export class Statistics extends Component {
-  render() {
-    const { good, neutral, bad, total, positivePercentage } = this.props;
-    return (
-      <>
-        <h2>Statistics</h2>
-        <p>Good: {good}</p>
-        <p>Neutral: {neutral}</p>
-        <p>Bad: {bad}</p>
-        <p>Total: {total}</p>
-        <p>Positive Feedback: {Math.ceil(positivePercentage)}%</p>
-        {total <= 0 && <p>No statictics</p>}
-      </>
-    );
-  }
-}
+export const Statistics = ({
+  good,
+  neutral,
+  bad,
+  total,
+  positivePercentage,
+}) => {
+  return (
+    <div className={css.container}>
+      <h3 className={css.title}>Statistics</h3>
+      <p>
+        <strong>Good:</strong> {good}
+      </p>
+      <p>
+        <strong>Neutral:</strong> {neutral}
+      </p>
+      <p>
+        <strong>Bad:</strong> {bad}
+      </p>
+      <hr></hr>
+      <p>
+        <strong className={css.underline}>Total:</strong> {total}
+      </p>
+      <p>
+        <span className={css.underline}>Positive Feedback:</span>{' '}
+        {Math.ceil(positivePercentage)}%
+      </p>
+    </div>
+  );
+};

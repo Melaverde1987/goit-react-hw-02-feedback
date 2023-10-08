@@ -48,6 +48,10 @@ img {
   object-fit: cover;
 }
 
+hr {
+  border-top: 1px solid var(--colorBorder);
+}
+
 th,
 td {
   padding: 10px 20px;
@@ -88,14 +92,15 @@ body {
   border-radius: 5px;
 }
 
-.btn.btn-outline {
-  border: 1px solid var(--colorPrimary);
-  color: var(--colorPrimary);
-  transition: background-color var(--cubic-transition);
+.btn.btn-primary {
+  background-color: var(--colorPrimary);
+  color: var(--white);
+  transition: box-shadow var(--cubic-transition), color var(--cubic-transition);
 }
 
-.btn.btn-outline:hover {
-  background-color: var(--colorSecondary);
+.btn.btn-primary:hover,
+.btn.btn-primary:focus {
+  box-shadow: rgba(0, 0, 0, 0.48) 0 4px 12px;
 }
 
 :root {
@@ -107,12 +112,12 @@ body {
   --white: #ffffff;
   --black: #000000;
 
-  --colorPrimary: #9bb537;
+  --colorPrimary: #6200ee;
   --colorSecondary: #303030;
   --colorText: #141414;
   --colorBody: #eaedee;
 
-  --colorBorder: rgb(185 184 184 / 20%);
+  --colorBorder: rgb(65 64 64 / 20%);
 
   /* 
   ==============
