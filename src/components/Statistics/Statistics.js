@@ -1,18 +1,18 @@
-import React from 'react';
-import styles from './Statistics.module.css';
+import React, { Component } from 'react';
 
-export const Statistics = ({ stats, title }) => {
-  return (
-    <section className={styles.statistics}>
-      {title && <h2 className={styles.title}>{title}</h2>}
-      <ul className={styles.statList}>
-        {stats.map(item => (
-          <li className={styles.item} key={item.id}>
-            <span className={styles.label}>{item.label} </span>
-            <span className={styles.percentage}>{item.percentage}%</span>
-          </li>
-        ))}
-      </ul>
-    </section>
-  );
-};
+export class Statistics extends Component {
+  render() {
+    const { good, neutral, bad, total, positivePercentage } = this.props;
+    return (
+      <>
+        <h2>Statistics</h2>
+        <p>Good: {good}</p>
+        <p>Neutral: {neutral}</p>
+        <p>Bad: {bad}</p>
+        <p>Total: {total}</p>
+        <p>Positive Feedback: {Math.ceil(positivePercentage)}%</p>
+        {total <= 0 && <p>No statictics</p>}
+      </>
+    );
+  }
+}

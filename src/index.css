@@ -1,6 +1,6 @@
 @import-normalize; /* bring in normalize.css styles */
 
-/* Reset styles */
+/* GENERAL STYLES */
 h1,
 h2,
 h3,
@@ -38,6 +38,7 @@ button {
   border: none;
   background-color: transparent;
   padding: 0;
+  font-size: 16px;
 }
 
 img {
@@ -78,6 +79,25 @@ body {
   margin: 0;
 }
 
+#root {
+  margin: 20px;
+}
+
+.btn {
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+.btn.btn-outline {
+  border: 1px solid var(--colorPrimary);
+  color: var(--colorPrimary);
+  transition: background-color var(--cubic-transition);
+}
+
+.btn.btn-outline:hover {
+  background-color: var(--colorSecondary);
+}
+
 :root {
   /* 
   ================
@@ -88,8 +108,8 @@ body {
   --black: #000000;
 
   --colorPrimary: #9bb537;
-  --colorSecondary: #f5f5f5;
-  --colorText: #6b6b6b;
+  --colorSecondary: #303030;
+  --colorText: #141414;
   --colorBody: #eaedee;
 
   --colorBorder: rgb(185 184 184 / 20%);
